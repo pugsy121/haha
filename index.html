@@ -8,16 +8,13 @@
 </head>
 <body>
     <div class="video-container">
-        <video id="video" width="100%" height="auto" poster="placeholder.jpg">
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <iframe id="video" src="https://drive.google.com/file/d/1A7rdKf6e0SvfJME7mPvBEcURej0XcRg_/view?usp=sharing" width="360" height="640" frameborder="0" allow="autoplay"></iframe>
         <button class="play-button" onclick="playVideo()">Play</button>
     </div>
     <script>
         function playVideo() {
             const video = document.getElementById('video');
-            video.play();
+            video.src += "&autoplay=1"; // Add autoplay to the video source URL
         }
     </script>
 </body>

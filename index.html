@@ -3,18 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
-    <link rel="stylesheet" href="style.css">
+    <title>YouTube Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .video-container {
+            text-align: center;
+            width: 360px;
+        }
+        iframe {
+            width: 100%;
+            height: 640px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .play-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .play-button:hover {
+            background-color: #e55b4f;
+        }
+    </style>
 </head>
 <body>
     <div class="video-container">
-        <iframe id="video" src="https://drive.google.com/uc?id=1A7rdKf6e0SvfJME7mPvBEcURej0XcRg_" width="360" height="640" frameborder="0" allow="autoplay"></iframe>
+        <iframe id="video" src="https://www.youtube.com/embed/IMs93s0lHYY?rel=0" allowfullscreen></iframe>
         <button class="play-button" onclick="playVideo()">Play</button>
     </div>
+
     <script>
         function playVideo() {
             const video = document.getElementById('video');
-            video.src += "&autoplay=1"; // Add autoplay to the video source URL
+            const src = video.src;
+            if (!src.includes("autoplay=1")) {
+                video.src += "&autoplay=1";
+            }
         }
     </script>
 </body>

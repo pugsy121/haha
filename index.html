@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Shorts Player</title>
+    <title>Minimal YouTube Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="video-container">
-        <!-- Embed YouTube Shorts Video -->
+        <!-- Embed YouTube Video with Minimal UI -->
         <iframe id="video" 
-                src="https://www.youtube.com/embed/IMs93s0lHYY" 
+                src="https://www.youtube.com/embed/IMs93s0lHYY?autoplay=0&controls=0&modestbranding=1&rel=0&fs=0&showinfo=0" 
                 width="360" 
                 height="640" 
                 frameborder="0" 
@@ -69,7 +69,7 @@
             const video = document.getElementById('video');
             const currentSrc = video.src;
             if (!currentSrc.includes("autoplay=1")) {
-                video.src = currentSrc + "?autoplay=1"; // Enable autoplay on button click
+                video.src = currentSrc + "&autoplay=1"; // Enable autoplay on button click
             }
         }
     </script>

@@ -3,74 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal YouTube Player</title>
+    <title>Video Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="video-container">
-        <!-- Embed YouTube Video with Minimal UI -->
-        <iframe id="video" 
-                src="https://www.youtube.com/embed/IMs93s0lHYY?autoplay=0&controls=0&modestbranding=1&rel=0&fs=0&showinfo=0" 
-                width="360" 
-                height="640" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-        </iframe>
+        <!-- Video with Dropbox source -->
+        <video id="video" width="100%" height="auto" controls>
+            <source src="https://www.dropbox.com/scl/fi/4mocentm6lmkr14xqaq6f/video.mp4?rlkey=6hu4zsho4czhdhv85l9siwu76&st=5k7bfk9k&raw=1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <button class="play-button" onclick="playVideo()">Play</button>
     </div>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .video-container {
-            position: relative;
-            width: 360px;
-            height: 640px;
-            background-color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 5px solid #008cba;
-            border-radius: 10px;
-        }
-
-        iframe {
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .play-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #008cba;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .play-button:hover {
-            background-color: #005f73;
-        }
-    </style>
-
     <script>
         function playVideo() {
             const video = document.getElementById('video');
-            const currentSrc = video.src;
-            if (!currentSrc.includes("autoplay=1")) {
-                video.src = currentSrc + "&autoplay=1"; // Enable autoplay on button click
-            }
+            video.play();
         }
     </script>
 </body>
